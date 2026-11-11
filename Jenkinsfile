@@ -126,7 +126,7 @@ pipeline {
       echo 'Pipeline FAILED. Showing container logs.'
       bat(returnStatus: true, script: 'docker compose ps')
       bat(returnStatus: true, script: 'docker compose logs --tail=60')
-      mail to: 'karrijagannadh87@gmail.com',
+      mail to: 'karrijagannadhcse87@gmail.com',
            subject: "FAILED: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
            body: "Build failed.\nCheck: ${env.BUILD_URL}"
     }
