@@ -181,3 +181,4 @@ Jenkins computes `GIT_COMMIT`, `BUILD_NUMBER`, `BUILD_TIMESTAMP`, `DEPLOY_ENV`, 
 Kubernetes (deploy the same images with Deployments/Services), Ansible (provision the Jenkins host), Terraform (create the VM/cloud infra), Prometheus + Grafana (metrics from `/api/health`), ELK/Loki (central logs), Trivy/SonarQube (security and quality scans), MongoDB auth + HTTPS reverse proxy.
 ## DevOps Lab Notes
 - main note
+- feature note
