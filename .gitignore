@@ -1,0 +1,8 @@
+node_modules/
+dist/
+.env
+*.log
+maven-demo/target/
+.DS_Store
+.idea/
+.vscode/

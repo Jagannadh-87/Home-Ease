@@ -1,0 +1,13 @@
+import { Zap, Droplets, Snowflake, Sparkles, Hammer, PaintBucket, Wrench } from 'lucide-react';
+export const CATS = ['Electrician', 'Plumber', 'AC Technician', 'Home Cleaner', 'Carpenter', 'Painter'];
+export const CAT_ICON = { Electrician: Zap, Plumber: Droplets, 'AC Technician': Snowflake, 'Home Cleaner': Sparkles, Carpenter: Hammer, Painter: PaintBucket };
+export const Logo = () => <span className="flex items-center gap-2 font-bold text-xl text-indigo-600"><span className="bg-indigo-600 text-white p-1.5 rounded-xl"><Wrench size={18} /></span>HomeEase</span>;
+export const Card = ({ children, className = '' }) => <div className={`bg-white rounded-2xl shadow-sm border border-gray-100 p-5 ${className}`}>{children}</div>;
+export const Btn = ({ variant = 'primary', className = '', ...p }) => <button {...p} className={`px-4 py-2 rounded-xl text-sm font-medium transition disabled:opacity-50 ${variant === 'primary' ? 'bg-indigo-600 text-white hover:bg-indigo-700' : variant === 'danger' ? 'bg-red-50 text-red-600 hover:bg-red-100' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'} ${className}`} />;
+export const Input = p => <input {...p} className={`w-full border border-gray-200 rounded-xl px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-300 ${p.className || ''}`} />;
+const BADGE = { pending: 'bg-amber-100 text-amber-700', accepted: 'bg-blue-100 text-blue-700', 'in-progress': 'bg-purple-100 text-purple-700', completed: 'bg-green-100 text-green-700', rejected: 'bg-red-100 text-red-700', cancelled: 'bg-gray-200 text-gray-600' };
+export const StatusBadge = ({ s }) => <span className={`px-2.5 py-0.5 rounded-full text-xs font-medium ${BADGE[s] || 'bg-gray-100'}`}>{s}</span>;
+export const Stat = ({ icon: I, label, value }) => <Card className="flex items-center gap-4"><div className="bg-indigo-50 text-indigo-600 p-3 rounded-xl"><I size={22} /></div><div><div className="text-2xl font-bold">{value}</div><div className="text-sm text-gray-500">{label}</div></div></Card>;
+export const Tabs = ({ tabs, tab, setTab }) => <div className="flex gap-2 flex-wrap mb-6">{tabs.map(t => <button key={t} onClick={() => setTab(t)} className={`px-4 py-2 rounded-xl text-sm font-medium ${tab === t ? 'bg-indigo-600 text-white' : 'bg-white text-gray-600 border border-gray-200 hover:bg-gray-100'}`}>{t}</button>)}</div>;
+export const Rating = ({ v }) => <span className="text-amber-500 text-sm">★ {Number(v).toFixed(1)}</span>;
+export const CatIcon = ({ cat, size = 22 }) => { const I = CAT_ICON[cat] || Wrench; return <I size={size} />; };
